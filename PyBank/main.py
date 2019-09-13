@@ -52,3 +52,16 @@ print("Financial Analysis\n",
     f"Average Change: ${avg_change: .2f}\n",
     f"Greatest Increase in Profits: {dates[max_index + 1]} (${max_change})\n",
     f"Greatest Decrease in Profits: {dates[min_index + 1]} (${min_change})\n")
+
+## Save Results.txt File ##
+
+results_path = os.path.join("./", "results.txt")
+
+with open(results_path, "w+") as r:
+    r.write("Financial Analysis\n")
+    r.write("-----------------------------------------\n")
+    r.write(f"Total Months: {tot_months}\n")
+    r.write(f"Total Profits: {tot_profits}\n")
+    r.write(f"Average Change: ${avg_change: .2f}\n")
+    r.write(f"Greatest Increase in Profits: {dates[max_index + 1]} (${max_change})\n")
+    r.write(f"Greatest Decrease in Profits: {dates[min_index + 1]} (${min_change})\n")
