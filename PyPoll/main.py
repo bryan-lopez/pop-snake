@@ -45,7 +45,22 @@ print("Election Results\n",
     f"Total votes: {tot_votes}\n",
     "----------------------------")
 for can in candidates:
-    print(f"{can}: {tally_percents[can]*100:.2f} ({tally[can]})")
+    print(f"{can}: {tally_percents[can]*100:.2f}% ({tally[can]})")
 print("----------------------------\n",
     f"Winner: {winner}\n",
     "----------------------------\n")
+
+## Write Results ##
+
+results_path = os.path.join("./", "results.txt")
+
+with open(results_path, "w+") as r:
+    r.write("Election Results\n")
+    r.write("----------------------------\n")
+    r.write(f"Total votes: {tot_votes}\n")
+    r.write("----------------------------")
+    for can in candidates:
+        r.write(f"{can}: {tally_percents[can]*100:.2f}% ({tally[can]})\n")
+    r.write("----------------------------\n")
+    r.write(f"Winner: {winner}\n")
+    r.write("----------------------------\n")
