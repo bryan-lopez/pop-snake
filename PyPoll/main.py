@@ -58,7 +58,7 @@ with open(results_path, "w+") as r:
     r.write("Election Results\n")
     r.write("----------------------------\n")
     r.write(f"Total votes: {tot_votes}\n")
-    r.write("----------------------------")
+    r.write("----------------------------\n")
     for can in candidates:
         r.write(f"{can}: {tally_percents[can]*100:.2f}% ({tally[can]})\n")
     r.write("----------------------------\n")
